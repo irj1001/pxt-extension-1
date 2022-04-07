@@ -1,5 +1,4 @@
-//% color="#AA278D" weight=100
-namespace extension1 {
+namespace leds {
     //% block
     export function spiral_led() {
         for (let index = 0; index < 2; index++) {
