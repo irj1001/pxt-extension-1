@@ -1,3 +1,4 @@
+//% color=FF8D0C
 namespace leds {
     //% block
     export function spiral_led() {
