@@ -1,5 +1,3 @@
-//% color=120 weight=100 icon="\uflec"
-//% groups= ['LED matrix','other']
 namespace leds {
     //% block: "turns on and off the leds in an spiral form"
     export function spiral_led() {
