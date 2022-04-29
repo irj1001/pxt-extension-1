@@ -1,3 +1,11 @@
+enum Pattern {
+    //% block="circle"
+    Circle,
+    //% block="X"
+    X
+}
+
+
 
 //% groups="['LED Matrix', 'Other']"
 namespace leds {
@@ -42,18 +50,32 @@ namespace leds {
     }
 
 
-    //% block: "the lights blink the given number of times"
+    //% block: "blink || %n|times in a  %pattern|pattern"
     //% group='LED Matrix'
-    export function blink(n: number) {
+    //% n.min=0 n.max=10
+    export function blink(n: number, pattern: Pattern) {
         let j=0;
         for (j=0;j<n;++j){
+
+            if(pattern==Pattern.X){
             basic.showLeds(`
             # . . . #
             . # . # .
             . . # . .
             . # . # .
             # . . . #
+            `)}
+            if (pattern == Pattern.Circle){
+            basic.showLeds(`
+            # # # # #
+            # . . . #
+            # . . . #
+            # . . . #
+            # # # # #
             `)
+
+
+            }
 
             basic.showLeds(`
             . . . . .
