@@ -1,5 +1,8 @@
+
+//% groups="['LED Matrix', 'Other']"
 namespace leds {
     //% block: "turns on and off the leds in an spiral form"
+    //% group='LED Matrix'
     export function spiral_led() {
         for (let index = 0; index < 2; index++) {
             let i, l = 0, k = 0, n = 5, m = 5;
@@ -38,6 +41,37 @@ namespace leds {
 
     }
 
+
+    //% block: "the lights blink the given number of times"
+    //% group='LED Matrix'
+    export function blink(n: number) {
+        let j=0;
+        for (j=0;j<n;++j){
+            basic.showLeds(`
+            # . . . #
+            . # . # .
+            . . # . .
+            . # . # .
+            # . . . #
+            `)
+
+            basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `)
+
+        }
+    
+    }
+
+    //% block: "Returns a random number between 0 and 5"
+    //% group='Other'
+    export function randomNumber(): number {
+        return Math.random()*5;
+    }
 
 
 }
